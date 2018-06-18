@@ -45,15 +45,9 @@
 
         </div>
     </div>
-<<<<<<< HEAD
     <div class="container">
         <div class="row">
             <form class="form-login" action="login.php" method="post">
-=======
-
-    <div class="container">
-        <div class="row">
->>>>>>> b82d5fa52aa556ec9f24db3ee3d7325b810ebea5
             <p style="text-align:center;padding-top:50px;font-size:200%;">
             <?php
                       $con = mysqli_connect("localhost","root","123");
@@ -94,7 +88,6 @@
                       mysqli_close($con); 
                       ?>
             </p>
-<<<<<<< HEAD
  
                 <button type="submit"  id="btn-reg" style="width:100px;margin-left:127px;"><a href="index.html">返回首页</a></button>
                 <button type="submit"  id="btn-reg" style="width:100px;margin-left:127px;"><a href="welcome.php">填写简历信息    </a></button>
@@ -102,11 +95,6 @@
         </div>
     </div>
 
-=======
-            <button type="submit" id="btn-return"><a href="index.html">返回首页</a></button>
-        </div>
-    </div>
->>>>>>> b82d5fa52aa556ec9f24db3ee3d7325b810ebea5
 </body>
 
 </html>
