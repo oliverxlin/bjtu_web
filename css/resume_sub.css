@@ -1,0 +1,73 @@
+    @font-face {
+        font-family: myFirstFont;
+        src: url('abc.ttf');
+    }
+    
+    body {
+        background: url(1.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    
+    html,
+    body {
+        scrollbar-face-color: gray;
+        /*滚动栏为灰色*/
+        scrollbar-shadow-color: gray;
+        scrollbar-highlight-color: blue;
+        scrollbar-3dlight-color: green;
+        scrollbar-darkshadow-color: gray;
+        scrollbar-track-color: gray;
+        scrollbar-arrow-color: black;
+    }
+    
+    .highlight {
+        scrollbar-face-color: blue;
+        scrollbar-shadow-color: red;
+        scrollbar-highlight-color: red;
+        scrollbar-3dlight-color: green;
+        scrollbar-darkshadow-color: yellow;
+        scrollbar-track-color: red;
+        scrollbar-arrow-color: blue;
+    }
+    
+    #png_image {
+        background: none;
+        position: absolute;
+        left: 582px;
+        top: 18px;
+        width: 200px;
+        height: 200px;
+        filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='a.png', sizingMethod='image');
+    }
+    
+    p {
+        color: black;
+        text-align: center;
+        font-family: myFirstFont;
+    }
+    
+    #intro {
+        text-align: center;
+        font-size: 200%;
+        font-weight: bold;
+        color: green;
+        text-shadow: 5px 5px 5px #FF0000;
+        font-family: myFirstFont;
+    }
+    
+    h1:first-letter {
+        font-size: 300%;
+    }
+    
+    .bordered1 {
+        margin-top: 30px;
+        border: solid #ccc 1px;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        -webkit-box-shadow: 0 1px 1px #ccc;
+        -moz-box-shadow: 0 1px 1px #ccc;
+        box-shadow: 10px 10px 5px #ccc;
+        font-size: 150%;
+    }

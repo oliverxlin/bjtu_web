@@ -1,24 +1,110 @@
 /* /* Top */
-#wrap{margin:auto;width:1000px;padding:0 0 40px 0;}
-.main_content{ clear:both;}
-#header{width:100%; height:140px; background-color:#acd6ff;}
-.header_content{ width:100%; margin:auto; line-height:140px;}
-.logo{float:left;margin:0 0 0 200px; padding:0px;font-family: 'Source Sans Pro', sans-serif; font-size:45px; color:#505050;}
-.logo a{color:#fff;}
-.logo span{ font-size:14px; color:#FFFFFF;}
 
-.top_slogan{ text-align:center;font-family: 'Source Sans Pro', sans-serif; color:#CCCCCC; font-size:30px; padding:50px 150px; font-style:italic; line-height:40px;}
+#wrap {
+    margin: auto;
+    width: 1000px;
+    padding: 0 0 40px 0;
+}
+
+.main_content {
+    clear: both;
+}
+
+#header {
+    width: 100%;
+    height: 140px;
+    background-color: #acd6ff;
+}
+
+.header_content {
+    width: 100%;
+    margin: auto;
+    line-height: 140px;
+}
+
+.logo {
+    float: left;
+    margin: 0 0 0 200px;
+    padding: 0px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 45px;
+    color: #505050;
+}
+
+.logo a {
+    color: #fff;
+}
+
+.logo span {
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.top_slogan {
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #CCCCCC;
+    font-size: 30px;
+    padding: 50px 150px;
+    font-style: italic;
+    line-height: 40px;
+}
+
 
 /* Menu */
-.menu{float:right; padding:0 200px 0 0;}
-.menu ul {list-style:none; margin:0; padding:0px;}
-.menu ul * {margin:0; padding:0;}
-.menu ul li {float:left; padding:0 20px 0 20px; height:35px;}
-.menu ul li a{font-family: 'Source Sans Pro', sans-serif;color:#fff; font-size:16px;}
-.menu ul li.selected a{color:#CEFFCE;}
-.menu ul li a:hover{color:#000;}
 
-a{color:#f98740; text-decoration:none;}
+.menu {
+    float: right;
+    padding: 0 200px 0 0;
+}
 
-body{font-family:Arial, Helvetica, sans-serif;padding:0;font-size:12px;margin:0 auto;color:#757575;background-color:#FFFFFF;}
-.clear{clear:both;}
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+}
+
+.menu ul * {
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    float: left;
+    padding: 0 20px 0 20px;
+    height: 35px;
+}
+
+.menu ul li a {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #fff;
+    font-size: 16px;
+}
+
+.menu ul li.selected a {
+    color: #CEFFCE;
+}
+
+.menu ul li a:hover {
+    color: #000;
+}
+
+a {
+    color: #f98740;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    font-size: 12px;
+    margin: 0 auto;
+    color: #757575;
+    background-color: #FFFFFF;
+}
+
+.clear {
+    clear: both;
+}
+
+
