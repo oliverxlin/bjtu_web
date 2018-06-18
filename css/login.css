@@ -1,0 +1,52 @@
+div.container{
+   width: 450px;
+    height: 230px;
+    padding: auto;
+    text-align: center;
+    /* margin: 20px,20px; */
+    position: absolute; 
+    left:48%;
+    margin-left:-180px; 
+    margin-top: 100px;
+  background-color: #FaFaFa;
+  border: 4px outset #E0E0E0;
+  border-left: none;
+  border-top: none;
+  border-radius: 10px;
+}
+div.row{
+    width: 80%;
+
+    margin: auto;
+}
+div form{
+    text-align: left;
+}
+#inputname,#inputpwd{
+    height: 200%;
+    border: 1 border-style grey;
+    border-radius: 5px;
+    width: 300px;
+    height: 25px;
+}
+button{
+    width: 60px;
+    height: 35px;
+    font-size: 100%;
+    background-color: #84c1ff;
+    border: 1 border-style grey;
+    border-radius: 5px;
+    color: white;
+}
+form label{
+    font-size: 90%;
+}
+
+form #btn-reg{    
+    background-color: grey;
+
+}
+form #btn-reg a{
+    text-decoration: none;
+    color:white;
+}
