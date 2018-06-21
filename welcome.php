@@ -73,7 +73,6 @@
         </div>
     </form>
 
-
     <form action="resume_sub.php" id="resume_form" method="POST">
         <table width="776" align="center" class="bordered1">
             <thead>
