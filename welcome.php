@@ -10,7 +10,16 @@
     <link rel="stylesheet" href="css/footer.css">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/resume_sub.css">
-
+    <?php       
+                    session_start();
+                    $name = $_SESSION['name'];
+                    $con = mysqli_connect("localhost","root","123");
+                    $sql = "SELECT * FROM users where name = '$name'";
+                      mysqli_query($con , "set names utf8");
+                      mysqli_select_db( $con,"mypage"); 
+                      $retval = mysqli_query($con,$sql);
+                      $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
+                      ?>              
 </head>
 <script language="Javascript" script text="text/javascript">
     function clock() {
@@ -73,7 +82,7 @@
         </div>
     </form>
 
-    <form action="resume_sub.php" id="resume_form" method="POST">
+    <form name="form2" action="resume_sub.php" id="resume_form" method="POST">
         <table width="776" align="center" class="bordered1">
             <thead>
                 <tr>
@@ -85,11 +94,13 @@
             <tr>
                 <td>
                     <div align="center">
-                        <p>真实姓名：<input type="text" name="xm" size=15></p>
+                        <p>真实姓名：<input type="text" name="xm" size=15 value="<?php  echo $row['name']?>"></p>
                     </div>
-    </form>
-    </td>
+                    </td>
     </tr>
+    </form>
+
+
     <tr>
         <td height="57">
             <p> 性别:
@@ -102,22 +113,10 @@
     <tr>
         <td>
             <p> 出生日期:
-            <?php  
-                session_start();  
-            
-                ?>
-                <input type=text name="year" size=2 value="<?php       
 
-                       $name = $_SESSION['name'];
-                    $con = mysqli_connect("localhost","root","123");
-                    $sql = "SELECT * FROM users where name = '$name'";
-                      mysqli_query($con , "set names utf8");
-                      mysqli_select_db( $con,"mypage"); 
-                      $retval = mysqli_query($con,$sql);
-                      $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
-                      echo $row['year'];?>"> 年
-                <input type=text name="month" size=2> 月
-                <input type=text name="day" size=2> 日
+                <input type=text name="year" size=2 value="<?php  echo $row['year']?>"> 年
+                <input type=text name="month" size=2 value="<?php echo $row['month']?>"> 月
+                <input type=text name="day" size=2 value="<?php echo $row['day']?>"> 日
             </p>
             <br>
         </td>
@@ -154,7 +153,7 @@
         <td>
             <p> 职称:
                 <select name="职称" size=3>
-                            <option value="助教">助教
+                    <option value="助教">助教
                       <option value="讲师">讲师
                       <option value="副教授">副教授
                       <option value="教授">教授

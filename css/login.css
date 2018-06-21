@@ -47,7 +47,6 @@ form label {
     font-size: 90%;
 }
 
-<<<<<<< HEAD
 #btn-return {
     background-color: grey;
 }
@@ -62,23 +61,6 @@ form #btn-return a {
 }
 
 form #btn-reg a {
-=======
-#btn-reg {
-    background-color: grey;
-}
-
-#btn-return {
-    width: 1000px;
-    font-size: 1000px;
-}
-
-form #btn-reg a {
-    text-decoration: none;
-    color: white;
-}
-
-#btn-return a {
->>>>>>> b82d5fa52aa556ec9f24db3ee3d7325b810ebea5
     text-decoration: none;
     color: white;
 }
