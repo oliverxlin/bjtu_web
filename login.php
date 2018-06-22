@@ -29,10 +29,10 @@
                         <a href="index.html">个人介绍</a>
                     </li>
                     <li>
-                        <a href="index.html">科研世界</a>
+                        <a href="text.php">科研世界</a>
                     </li>
                     <li>
-                        <a href="index.html">个人简历</a>
+                        <a href="welcome.php">个人简历</a>
                     </li>
                     <li class="selected">
                         <a href="login.html">登陆</a>

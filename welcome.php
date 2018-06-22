@@ -49,13 +49,22 @@
         return null;
 
     }
-
-    var x = document.getElementById('1234');
-    alert(x.innerHTML);
-    x.innerHTML = getQueryString('name').toString;
+    function form_display(){
+        var login_status = "<?php 
+                                    if(isset($_SESSION['name'])){
+                                        echo "1";
+                                    }
+                                    else{
+                                        echo "0";
+                                    }
+                            ?>";
+        if(login_status==0){
+            form2.style.display = 'none';
+        }
+    }
 </script>
 
-<body onLoad="clock()">
+<body onLoad="clock(),form_display()">
 
     <div id="header">
         <div class="header_content">
@@ -64,12 +73,24 @@
 
             <div class="menu">
                 <ul>
-                    <li class="selected"><a href="index">主页</a></li>
-                    <li><a href="page.html">个人介绍</a></li>
-                    <li><a href="page.html">科研世界</a></li>
-                    <li><a href="page.html">个人简历</a></li>
-                    <li><a href="login.html">登陆</a></li>
-                    <li><a href="reg.html">注册</a></li>
+                    <li>
+                        <a href="index.html">主页</a>
+                    </li>
+                    <li>
+                        <a href="index.html">个人介绍</a>
+                    </li>
+                    <li>
+                        <a href="text.php">科研世界</a>
+                    </li>
+                    <li class="selected">
+                        <a href="welcome.php">个人简历</a>
+                    </li>
+                    <li >
+                        <a href="login.html">登陆</a>
+                    </li>
+                    <li>
+                        <a href="reg.html">注册</a>
+                    </li>
                 </ul>
             </div>
 
@@ -98,7 +119,6 @@
                     </div>
                     </td>
     </tr>
-    </form>
 
 
     <tr>

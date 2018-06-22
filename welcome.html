@@ -78,7 +78,7 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/resume_sub.css">
     <?php       
-session_start();
+                    session_start();
                     $name = $_SESSION['name'];
                     $con = mysqli_connect("localhost","root","123");
                     $sql = "SELECT * FROM users where name = '$name'";
@@ -87,8 +87,9 @@ session_start();
                       $retval = mysqli_query($con,$sql);
                       $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
                       ?>
+
     <script language="JavaScript">
-    var Y=<?php echo $row['name']?>,M=<?php echo $row['year']?>,D=<?php echo $row['month']?>;
+    var Y="<?php echo $row['name']?>",M="<?php echo $row['year']?>",D="<?php echo $row['month']?>";
     alert(Y);
     alert(M);
     alert(D);
