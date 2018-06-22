@@ -1,6 +1,7 @@
+
 <html>
 <head>
-    <title>二级菜单测试</title>
+    <title>管理员界面</title>
     <meta charset="utf-8">
     <style type="text/css">
 
@@ -11,8 +12,9 @@
         overflow: hidden; 
         display:inline-block;
         height :100%;
-        background-color:#cfe;
+        background-color:#F0F0F0;
         margin-left:0;
+        border-radius: 15px;
     }
     
     /* 去掉a标签的下划线 */
@@ -46,8 +48,8 @@
     .menuDiv > ul > li > a {
         width: 130px;
         line-height: 40px;
-        color: black;
-        background-color: #cfe;
+        color: #5b5b5b;
+        background-color: #F0F0F0;
         text-align: center;
         border-left: 1px solid #bbf;
         display: block;
@@ -60,8 +62,7 @@
 
     /* 在一级菜单中，鼠标放上去的样式 */
     .menuDiv > ul > li > a:hover {
-        color: #f0f;
-        background-color: #bcf;
+        background-color: #ADADAD;
     }
 
     /* 二级菜单 */
@@ -69,7 +70,7 @@
         width: 130px;
         line-height: 36px;
         color: #456;
-        background-color: #eff;
+        background-color: #d0d0d0;
         text-align: center;
         border: 1px solid #ccc;
         border-top: none;
@@ -83,8 +84,8 @@
     
     /* 在二级菜单中，鼠标放上去的样式 */
     .menuDiv > ul > li > ul > li > a:hover {
-        color: #a4f;
-        background-color: #cdf;
+        color: white;
+        background-color: black;
     }
     /* -------------菜单css代码----------end---------- */
     

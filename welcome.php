@@ -10,16 +10,22 @@
     <link rel="stylesheet" href="css/footer.css">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/resume_sub.css">
-    <?php       
-                    session_start();
-                    $name = $_SESSION['name'];
-                    $con = mysqli_connect("localhost","root","123");
-                    $sql = "SELECT * FROM users where name = '$name'";
-                      mysqli_query($con , "set names utf8");
-                      mysqli_select_db( $con,"mypage"); 
-                      $retval = mysqli_query($con,$sql);
-                      $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
-                      ?>              
+    <link href="css/login.css" rel="stylesheet">
+    <!-- <script type="text/javascript" src="js/time.js"></script> -->
+
+    <?php 
+    session_start();
+    if (isset($_SESSION['name'])) {
+        $name = $_SESSION['name'];
+        $con = mysqli_connect("localhost", "root", "123");
+        $sql = "SELECT * FROM users where name = '$name'";
+        mysqli_query($con, "set names utf8");
+        mysqli_select_db($con, "mypage");
+        $retval = mysqli_query($con, $sql);
+        $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
+    }
+
+    ?>              
 </head>
 <script language="Javascript" script text="text/javascript">
     function clock() {
@@ -49,22 +55,40 @@
         return null;
 
     }
-    function form_display(){
+    function tag_display(){
         var login_status = "<?php 
-                                    if(isset($_SESSION['name'])){
-                                        echo "1";
-                                    }
-                                    else{
-                                        echo "0";
-                                    }
+                            if (isset($_SESSION['name'])) {
+                                echo "1";
+                            } else {
+                                echo "0";
+                            }
                             ?>";
         if(login_status==0){
             form2.style.display = 'none';
+            tips.style.display = 'block';
+        }
+        else{
+            
+            form2.style.display = 'block';
+            tips.style.display = 'none';
+
         }
     }
+
+        var secs = 8;
+      function countDown() {
+        alert("123");
+        if (secs > 0) {
+          num.innerHTML = secs--;
+        }
+        else
+          location = "./index.html";
+          
+        }
+        
 </script>
 
-<body onLoad="clock(),form_display()">
+<body onLoad="clock(),tag_display(),setInterval('countDown()', 1000)">
 
     <div id="header">
         <div class="header_content">
@@ -77,20 +101,24 @@
                         <a href="index.html">主页</a>
                     </li>
                     <li>
-                        <a href="index.html">个人介绍</a>
+                        <a href="intro.html">个人介绍</a>
                     </li>
                     <li>
-                        <a href="text.php">科研世界</a>
+                        <a href="tech.html">科研世界</a>
                     </li>
                     <li class="selected">
                         <a href="welcome.php">个人简历</a>
                     </li>
                     <li >
-                        <a href="login.html">登陆</a>
+                        <a  href="login.html">登陆</a>
+                    </li>
+                 
+                    <li>
+                        <a  href="reg.html">注册</a>
                     </li>
                     <li>
-                        <a href="reg.html">注册</a>
-                    </li>
+                            <a href="user.php">用户中心</a>
+                        </li>
                 </ul>
             </div>
 
@@ -105,107 +133,114 @@
 
     <form name="form2" action="resume_sub.php" id="resume_form" method="POST">
         <table width="776" align="center" class="bordered1">
-            <thead>
-                <tr>
-                    <th width="768">
-                        <h1 id="intro">请输入您的个人信息</h1>
-                    </th>
-                </tr>
-            </thead>
+
             <tr>
                 <td>
                     <div align="center">
-                        <p>真实姓名：<input type="text" name="xm" size=15 value="<?php  echo $row['name']?>"></p>
+                        <p>真实姓名：<input type="text" name="xm" size=15 value="<?php echo $row['name'] ?>"></p>
                     </div>
                     </td>
-    </tr>
+            </tr>
 
 
-    <tr>
-        <td height="57">
-            <p> 性别:
-                <input type=radio name="性别" value="男" checked> 男
-                <input type=radio name="性别" value="女"> 女 &nbsp;
-            </p>
-            <br>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <p> 出生日期:
+             <tr>
+                <td height="57">
+                    <p> 性别:
+                        <input type=radio name="性别" value="男" checked> 男
+                        <input type=radio name="性别" value="女"> 女 &nbsp;
+                    </p>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p> 出生日期:
 
-                <input type=text name="year" size=2 value="<?php  echo $row['year']?>"> 年
-                <input type=text name="month" size=2 value="<?php echo $row['month']?>"> 月
-                <input type=text name="day" size=2 value="<?php echo $row['day']?>"> 日
-            </p>
-            <br>
-        </td>
-    </tr>
-    <tr>
-        <td height="69">
-            <p> 个人爱好:
-                <input type=checkbox name="爱好" value="体育"> 体育
-                <input type=checkbox name="爱好" value="文学"> 文学
-                <input type=checkbox name="爱好" value="艺术"> 艺术
-                <input type=checkbox name="爱好" value="旅游"> 旅游
-                <input type=checkbox name="爱好" value="美食"> 美食
-                <input type=checkbox name="爱好" value="其他"> 其他
-            </p>
-            <br>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <p> 学历:
-                <select name="学历" size=1>
-                            <option value="中专">中专
-                      <option selected value="大专">大专
-                      <option value="大学">大学
-                      <option value="硕士">硕士
-                      <option value="博士">博士
-                      <option value="其他">其他
-                    </select>
-            </p>
-            <br>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <p> 职称:
-                <select name="职称" size=3>
-                    <option value="助教">助教
-                      <option value="讲师">讲师
-                      <option value="副教授">副教授
-                      <option value="教授">教授
-                      <option value="其他">其他
-                    </select>
-            </p>
-            <br>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <p> <span class="STYLE2">个人介绍:</span> <br><br>
-                <textarea name=comment rows=5 cols=60>
-                  </textarea>
-            </p>
-            <br>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <center>
+                        <input type=text name="year" size=2 value="<?php echo $row['year'] ?>"> 年
+                        <input type=text name="month" size=2 value="<?php echo $row['month'] ?>"> 月
+                        <input type=text name="day" size=2 value="<?php echo $row['day'] ?>"> 日
+                    </p>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td height="69">
+                    <p> 个人爱好:
+                        <input type=checkbox name="爱好" value="体育"> 体育
+                        <input type=checkbox name="爱好" value="文学"> 文学
+                        <input type=checkbox name="爱好" value="艺术"> 艺术
+                        <input type=checkbox name="爱好" value="旅游"> 旅游
+                        <input type=checkbox name="爱好" value="美食"> 美食
+                        <input type=checkbox name="爱好" value="其他"> 其他
+                    </p>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p> 学历:
+                        <select name="学历" size=1>
+                                    <option value="中专">中专
+                            <option selected value="大专">大专
+                            <option value="大学">大学
+                            <option value="硕士">硕士
+                            <option value="博士">博士
+                            <option value="其他">其他
+                            </select>
+                    </p>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p> 职称:
+                        <select name="职称" size=3>
+                            <option value="助教">助教
+                            <option value="讲师">讲师
+                            <option value="副教授">副教授
+                            <option value="教授">教授
+                            <option value="其他">其他
+                            </select>
+                    </p>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p> <span class="STYLE2">个人介绍:</span> <br><br>
+                        <textarea name=comment rows=5 cols=60>
+                        </textarea>
+                    </p>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <center>
 
-                <input name="submit" type=submit value="提交">
-                <a href="file:///C|/xampp/htdocs/3.html"></a>
-                <input name="reset" type=reset value="重填">
+                        <input name="submit" type=submit value="提交">
+                        <a href="file:///C|/xampp/htdocs/3.html"></a>
+                        <input name="reset" type=reset value="重填">
 
-            </center>
-        </td>
-    </tr>
-    <tr> </tr>
+                    </center>
+                </td>
+            </tr>
     </table>
-    </form>
+</form>
+    <div name="tips">
+    <div  class="container">
+        <div class="row">
+                 <h2>您还未登陆，请先登陆</h1>
+                 <div class="skip">
+                 <p> 5秒钟后自动带你前往</p>
+                <h2>登陆界面</h2>
+                <font ID="num" SIZE="6">开始倒计数</font>
+            </div>
+        </div>
+        <a href="login.html">没有跳转请点击这里</a>
+    </div>
+    </div>
+    
 
 </body>
 
