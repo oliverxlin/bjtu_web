@@ -92,46 +92,52 @@
     </style>
 </head>
 <body>
-    <div class="menuDiv">
+
+
+<div class="menuDiv">
+ <ul>
+    <h3 style="text-align:center;color:#5b5b5b">用户管理界面</h3>
+ </ul>
+<ul>
+    <li>
+        <a href="#">菜单一</a>
         <ul>
-            <li>
-                <a href="#">菜单一</a>
-                <ul>
-                    <li><a href="#">二级菜单</a></li>
-                    <li><a href="#">二级菜单</a></li>
-                    <li><a href="#">二级菜单</a></li>
-                </ul>
-            </li> 
-            <li>
-                <a href="#">菜单二</a>
-                <ul>
-                    <li><a href="#">二级菜单</a></li>
-                    <li><a href="#">二级菜单</a></li>
-                </ul>
-            </li> 
-            <li>
-                <a href="#">菜单三</a>
-                <ul>
-                    <li><a href="#">二级菜单</a></li>
-                    <li><a href="#">二级菜单</a></li>
-                    <li><a href="#">二级菜单</a></li>
-                    <li><a href="#">二级菜单</a></li>
-                    <li><a href="#">二级菜单</a></li>
-                </ul>
-            </li> 
-            <li>
-                <a href="#">菜单四</a>
-            </li> 
-            <li>
-                <a href="#">菜单五</a>
-                <ul>
-                    <li><a href="#">二级菜单</a></li>
-                    <li><a href="#">二级菜单</a></li>
-                    <li><a href="#">二级菜单</a></li>
-                </ul>
-            </li> 
+            <li><a href="#">二级菜单</a></li>
+            <li><a href="#">二级菜单</a></li>
+            <li><a href="#">二级菜单</a></li>
         </ul>
-    </div>
+    </li> 
+    <li>
+        <a href="#">菜单二</a>
+        <ul>
+            <li><a href="#">二级菜单</a></li>
+            <li><a href="#">二级菜单</a></li>
+        </ul>
+    </li> 
+    <li>
+        <a href="#">菜单三</a>
+        <ul>
+            <li><a href="#">二级菜单</a></li>
+            <li><a href="#">二级菜单</a></li>
+            <li><a href="#">二级菜单</a></li>
+            <li><a href="#">二级菜单</a></li>
+            <li><a href="#">二级菜单</a></li>
+        </ul>
+    </li> 
+    <li>
+        <a href="#">菜单四</a>
+    </li> 
+    <li>
+        <a href="./logout.php">登出</a>
+        <!-- <ul>
+            <li><a href="#">二级菜单</a></li>
+            <li><a href="#">二级菜单</a></li>
+            <li><a href="#">二级菜单</a></li>
+        </ul> -->
+    </li> 
+</ul>
+</div>
+
     <!-- -------菜单html代码---------end------- -->
     
 </body>

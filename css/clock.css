@@ -1,0 +1,102 @@
+html{
+    background: url(./image/touxiang.jpg);
+    background-repeat: no-repeat;
+}
+
+
+/*钟表圆圈的样式*/
+        .circle {
+            position: relative;
+            margin: 50px auto;
+            margin-top:100px;
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            border-radius: 100px;
+        }
+        /*时针*/
+        #hour {
+            position: absolute;
+            top: 97px;
+            left: 97px;
+            width: 6px;
+            height: 60px;
+            background-color: blue;
+            -webkit-transform-origin: 50% 0%;
+            -moz-transform-origin: 50% 0%;
+            -ms-transform-origin: 50% 0%;
+            -o-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+        }
+        /*分针*/
+        #min {
+            position: absolute;
+            top: 98px;
+            left: 98px;
+            width: 4px;
+            height: 80px;
+            background-color: forestgreen;
+            -webkit-transform-origin: 50% 0%;
+            -moz-transform-origin: 50% 0%;
+            -ms-transform-origin: 50% 0%;
+            -o-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+        }
+        /*秒针*/
+        #sec {
+            position: absolute;
+            top: 99px;
+            left: 99px;
+            width: 2px;
+            height: 90px;
+            background-color: chocolate;
+            -webkit-transform-origin: 50% 0%;
+            -moz-transform-origin: 50% 0%;
+            -ms-transform-origin: 50% 0%;
+            -o-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+        }
+        /*钟表中心圆点*/
+        #point {
+            position: absolute;
+            z-index: 1;
+            top: 90px;
+            left: 90px;
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 10px;
+        }
+        /*钟表刻度*/
+        ul li {
+            list-style: none;
+            position: absolute;
+            top: 100px;
+            left: 99px;
+            width: 2px;
+            height: 97px;
+            border-bottom: 4px solid black;
+            -webkit-transform-origin: 50% 0%;
+            -moz-transform-origin: 50% 0%;
+            -ms-transform-origin: 50% 0%;
+            -o-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+        }
+        /*钟表小时刻度，就是长一点的那个刻度*/
+        ul li.lang {
+            height: 93px;
+            border-bottom: 8px solid black;
+        }
+        .skip{
+            width: 100%;
+            text-align: center;
+        }
+        .time{
+            width: 100%;
+            text-align: center;
+        }
+        .time input{
+            text-align: center;
+            font-size: 150%;
+            border: none;
+        }

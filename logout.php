@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div id="header">
+    <!-- <div id="header">
         <div class="header_content">
 
             <div class="logo">
@@ -51,7 +51,7 @@
 
 
         </div>
-    </div>
+    </div> -->
     <?php
     session_start();
     header('Content-type:text/html;charset=utf-8');
@@ -65,7 +65,7 @@
         }
 ?>
 
-    <div id="footer">CopyRight@Richado,2018 </div>
+    <!-- <div id="footer">CopyRight@Richado,2018 </div> -->
 </body>
 
 </html>
