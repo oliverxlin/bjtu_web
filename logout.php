@@ -13,45 +13,6 @@
 </head>
 
 <body>
-    <!-- <div id="header">
-        <div class="header_content">
-
-            <div class="logo">
-                <a href="index.html">Richado's</a>
-                <span>| A wonderful personal blog.</span>
-            </div>
-
-             <div class="menu">
-                <ul>
-                    <li>
-                        <a href="index.html">主页</a>
-                    </li>
-                    <li>
-                        <a href="intro.html">个人介绍</a>
-                    </li>
-                    <li>
-                        <a href="tech.html">科研世界</a>
-                    </li>
-                    <li >
-                        <a href="welcome.php">个人简历</a>
-                    </li>
-                    <li >
-                        <a  href="login.html">登陆</a>
-                    </li>
-                 
-                    <li>
-                        <a  href="reg.html">注册</a>
-                    </li>
-                    <li>
-                            <a href="user.php">用户中心</a>
-                        </li>
-                </ul>
-            </div>
-
-
-
-        </div>
-    </div> -->
     <?php
     session_start();
     header('Content-type:text/html;charset=utf-8');
@@ -63,8 +24,14 @@
         }else{
             header('location:skip.php?url=index.php&info=注销失败，请稍后重试！');
         }
+    $a = isset($_SESSION['name']);
 ?>
-
+<script> var a = "<?php echo '$a' ?>"
+        if(a){
+            alert("登出成功");
+            location.href = 'user.html';
+        }
+        </script>
     <!-- <div id="footer">CopyRight@Richado,2018 </div> -->
 </body>
 

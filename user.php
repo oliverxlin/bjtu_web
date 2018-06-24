@@ -20,7 +20,9 @@
         $retval = mysqli_query($con, $sql);
         $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
     }
-
+    else{
+        header("Location: ./not_login.html");
+    }
     ?>   
 </head>
 

@@ -3,6 +3,11 @@
 <head>
     <title>用户管理界面</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/nav_bar.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <style type="text/css">
 
     
@@ -88,34 +93,51 @@
         background-color: black;
     }
     /* -------------菜单css代码----------end---------- */
-    
+    .contain{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow:row;
+    flex-flow: row;
+
+    max-width: 100%;
+    height: 100%;
+    margin: auto;
+}
+.container{
+    -webkit-flex:3;
+    flex: 3;
+}
+.menuDiv{
+    -webkit-flex:1;
+    flex: 1;
+}
     </style>
 </head>
 <body>
 
-
+<div class="contain">
 <div class="menuDiv">
  <ul>
     <h3 style="text-align:center;color:#5b5b5b">管理员界面</h3>
  </ul>
 <ul>
     <li>
-        <a href="#">菜单一</a>
+        <a href="#">用户管理</a>
         <ul>
-            <li><a href="#">二级菜单</a></li>
+            <li><a onclick="change_iframe(this)" href="change_pwd.html">更改用户密码</a></li>
             <li><a href="#">二级菜单</a></li>
             <li><a href="#">二级菜单</a></li>
         </ul>
     </li> 
     <li>
-        <a href="#">菜单二</a>
+        <a href="#">数据库管理</a>
         <ul>
-            <li><a href="#">二级菜单</a></li>
-            <li><a href="#">二级菜单</a></li>
+            <li><a href="add_user.html">增加用户信息</a></li>
+            <li><a href="delete.html">删除用户</a></li>
         </ul>
     </li> 
     <li>
-        <a href="#">菜单三</a>
+        <a href="#">一级菜单</a>
         <ul>
             <li><a href="#">二级菜单</a></li>
             <li><a href="#">二级菜单</a></li>
@@ -137,8 +159,22 @@
     </li> 
 </ul>
 </div>
+<div class="container" >
+        <div class="row">
+            <form class="form-login" action="change_pwd.php" method="post">
+                <h2>修改密码</h2>
+                <label>
+                    <b>新的密码</b>
+                </label>
+                </br>
+                <input name="pwd" id="inputpwd" type="password" placeholder="请输入新的密码" required>
+                <br>
 
-    <!-- -------菜单html代码---------end------- -->
-    
+                <button type="submit" id="btn-login">提交</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

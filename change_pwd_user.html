@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录</title>
+    <link href="css/nav_bar.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    
+<div class="menuDiv">
+        <ul>
+           <h3 style="text-align:center;color:#5b5b5b">用户管理界面</h3>
+        </ul>
+       <ul>
+           <li>
+               <a href="#">用户管理</a>
+               <ul>
+                   <li><a href="change_pwd.html">更改用户密码</a></li>
+                   <li><a href="#">二级菜单</a></li>
+                   <li><a href="#">二级菜单</a></li>
+               </ul>
+           </li> 
+           <li>
+               <a href="#">数据库管理</a>
+               <ul>
+                   <li><a href="#">增加用户信息</a></li>
+                   <li><a href="delete.html">删除用户</a></li>
+               </ul>
+           </li> 
+           <li>
+               <a href="#">一级菜单</a>
+               <ul>
+                   <li><a href="#">二级菜单</a></li>
+                   <li><a href="#">二级菜单</a></li>
+                   <li><a href="#">二级菜单</a></li>
+                   <li><a href="#">二级菜单</a></li>
+                   <li><a href="#">二级菜单</a></li>
+               </ul>
+           </li> 
+           <li>
+               <a href="#">菜单四</a>
+           </li> 
+           <li>
+               <a href="./logout.php">登出</a>
+               <!-- <ul>
+                   <li><a href="#">二级菜单</a></li>
+                   <li><a href="#">二级菜单</a></li>
+                   <li><a href="#">二级菜单</a></li>
+               </ul> -->
+           </li> 
+       </ul>
+       </div>
+       
+        <div class="container">
+            <div class="row">
+                <form class="form-login" action="login.php" method="post">
+                    <h2>登录到Richado's个人主页</h2>
+                    <label>
+                        <b>用户名</b>
+                    </label>
+                    </br>
+                    <input name="name" id="inputname" type="text" placeholder="请输入用户名" required autofocus>
+                    <br>
+                    <label>
+                        <b>密码</b>
+                    </label>
+                    </br>
+                    <input name="pwd" id="inputpwd" type="password" placeholder="请输入密码" required>
+                    <br>
+    
+                    <button type="submit" id="btn-login">登录</button>
+                    <button type="submit" id="btn-reg">
+                        <a href="./reg.html">注册</a>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+</body>
+
+</html>

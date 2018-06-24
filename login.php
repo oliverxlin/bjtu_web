@@ -95,7 +95,7 @@
                       ?>
             </p>
  
-                <button type="submit"  id="btn-reg" style="width:100px;margin-left:127px;"><a href="index.html">返回首页</a></button>
+                <button   id="btn-reg" style="width:100px;margin-left:127px;"><a href="index.html">返回首页</a></button>
                 <button type="submit"  id="btn-reg" style="width:100px;margin-left:127px;"><a href="welcome.php">填写简历信息    </a></button>
             </form>
         </div>

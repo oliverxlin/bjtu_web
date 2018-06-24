@@ -1,3 +1,35 @@
+<!-- 
+           </li> 
+       </ul>
+       </div>
+       
+        <div class="container">
+            <div class="row">
+                <form class="form-login" action="reg.php" method="post">
+                    <h2>添加新用户</h2>
+                    <label>
+                        <b>用户名</b>
+                    </label>
+                    </br>
+                    <input name="name" id="inputname" type="text" placeholder="请输入用户名" required autofocus>
+                    <br>
+                    <label>
+                        <b>密码</b> 
+                    </label>
+                    </br>
+                    <input name="pwd" id="inputpwd" type="password" placeholder="请输入密码" required>
+                    <br>
+    
+                    <button type="submit" id="btn-reg">
+                        <a href="./reg.html">注册</a>
+                    </button>
+                </form> 
+            </div>
+        </div>
+
+</body>
+
+</html> -->
 
 <html>
 <head>
@@ -118,7 +150,7 @@
 <div class="contain">
 <div class="menuDiv">
  <ul>
-    <h3 style="text-align:center;color:#5b5b5b">用户管理界面</h3>
+    <h3 style="text-align:center;color:#5b5b5b">管理员界面</h3>
  </ul>
 <ul>
     <li>
@@ -130,16 +162,16 @@
         </ul>
     </li> 
     <li>
-        <a href="#">数据库管理(无权限)</a>
+        <a href="#">数据库管理</a>
         <ul>
-            <li><a href="#">增加用户信息</a></li>
-            <li><a href="#">二级菜单</a></li>
+            <li><a href="add_user.html">增加用户信息</a></li>
+            <li><a href="delete.html">删除用户</a></li>
         </ul>
     </li> 
     <li>
-        <a href="#">个人简历修改</a>
+        <a href="#">一级菜单</a>
         <ul>
-            <li><a href="change_resume.php">简历修改</a></li>
+            <li><a href="#">二级菜单</a></li>
             <li><a href="#">二级菜单</a></li>
             <li><a href="#">二级菜单</a></li>
             <li><a href="#">二级菜单</a></li>
@@ -159,19 +191,27 @@
     </li> 
 </ul>
 </div>
-<div class="container" >
+<div class="container">
         <div class="row">
-            <form class="form-login" action="login.php" method="post">
-                <h2>修改密码</h2>
+            <form class="form-login" action="reg.php" method="post">
+                <h2>添加新用户</h2>
                 <label>
-                    <b>新的密码</b>
+                    <b>用户名</b>
                 </label>
                 </br>
-                <input name="pwd" id="inputpwd" type="password" placeholder="请输入新的密码" required>
+                <input name="name" id="inputname" type="text" placeholder="请输入用户名" required autofocus>
+                <br>
+                <label>
+                    <b>密码</b> 
+                </label>
+                </br>
+                <input name="pwd" id="inputpwd" type="password" placeholder="请输入密码" required>
                 <br>
 
-                <button type="submit" id="btn-login">提交</button>
-            </form>
+                <button type="submit" id="btn-reg">
+                提交
+                </button>
+            </form> 
         </div>
     </div>
 </div>

@@ -1,0 +1,216 @@
+<!-- <!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>登陆中转 </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/nav_bar.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/resume_sub.css">
+    <link href="css/login.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header">
+        <div class="header_content">
+
+            <div class="logo">
+                <a href="index.html">Richado's</a>
+                <span>| A wonderful personal blog.</span>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li class="selected">
+                        <a href="index.html">主页</a>
+                    </li>
+                    <li>
+                        <a href="intro.html">个人介绍</a>
+                    </li>
+                    <li>
+                        <a href="tech.html">科研世界</a>
+                    </li>
+                    <li>
+                        <a href="welcome.php">个人简历</a>
+                    </li>
+                    <li>
+                        <a href="login.html">登陆</a>
+                    </li>
+
+                    <li>
+                        <a href="reg.html">注册</a>
+                    </li>
+                    <li>
+                        <a href="user.php">用户中心</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div name="tips">
+                <div class="container">
+                    <div class="row">
+                        <h2>您还未登陆，请先登陆</h1>
+                            <div class="skip">
+                                <p> 5秒钟后自动带你前往</p>
+                                <h2>登陆界面</h2>
+                                <font ID="num" SIZE="6">开始倒计数</font>
+                            </div>
+                    </div>
+                    <a href="login.html">没有跳转请点击这里</a>
+                </div>
+            </div>
+
+            <div id="footer">CopyRight@Richado,2018 </div>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>简历</title>
+    <link href="css/nav_bar.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/resume_sub.css">
+    <link href="css/login.css" rel="stylesheet">
+    <!-- <script type="text/javascript" src="js/time.js"></script> -->
+
+    <?php 
+    session_start();
+    if (isset($_SESSION['name'])) {
+        $name = $_SESSION['name'];
+        $con = mysqli_connect("localhost", "root", "123");
+        $sql = "SELECT * FROM users where name = '$name'";
+        mysqli_query($con, "set names utf8");
+        mysqli_select_db($con, "mypage");
+        $retval = mysqli_query($con, $sql);
+        $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
+    }
+
+    ?>              
+</head>
+<script language="Javascript" script text="text/javascript">
+    function clock() {
+        var time = new Date();
+        var hour = time.getHours();
+        var minute = time.getMinutes();
+        var second = time.getSeconds();
+        hour = hour >= 10 ? hour : ("0" + hour);
+        minute = minute >= 10 ? minute : ("0" + minute);
+        second = second >= 10 ? second : ("0" + second);
+        document.form1.myClock.value = "现在是" + hour + "时" + minute + "分" + second + "秒";
+        setTimeout("clock()", 1000); //定时反复的执行
+    }
+
+    function getQueryString(name) {
+
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+
+        var r = window.location.search.substr(1).match(reg);
+
+        if (r != null) {
+
+            return unescape(r[2]);
+
+        }
+
+        return null;
+
+    }
+    function tag_display(){
+        var login_status = "<?php 
+                            if (isset($_SESSION['name'])) {
+                                echo "1";
+                            } else {
+                                echo "0";
+                            }
+                            ?>";
+        if(login_status==0){
+            form2.style.display = 'none';
+            tips.style.display = 'block';
+        }
+        else{
+            
+            form2.style.display = 'block';
+            tips.style.display = 'none';
+
+        }
+    }
+
+        var secs = 8;
+      function countDown() {
+        alert("123");
+        if (secs > 0) {
+          num.innerHTML = secs--;
+        }
+        else
+          location = "./index.html";
+          
+        }
+        
+</script>
+
+<body onLoad="clock(),tag_display(),setInterval('countDown()', 1000)">
+
+    <div id="header">
+        <div class="header_content">
+
+            <div class="logo"><a href="index.html">guadi</a> <span>| a simple responsive template</span></div>
+
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="index.html">主页</a>
+                    </li>
+                    <li>
+                        <a href="intro.html">个人介绍</a>
+                    </li>
+                    <li>
+                        <a href="tech.html">科研世界</a>
+                    </li>
+                    <li>
+                        <a href="welcome.php">个人简历</a>
+                    </li>
+                    <li >
+                        <a  href="login.html">登陆</a>
+                    </li>
+                 
+                    <li>
+                        <a  href="reg.html">注册</a>
+                    </li>
+                    <li>
+                            <a href="user.php">用户中心</a>
+                        </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div name="tips">
+    <div  class="container">
+        <div class="row">
+                 <h2>您还未登陆，请先登陆</h1>
+                 <div class="skip">
+                 <p> 5秒钟后自动带你前往</p>
+                <h2>登陆界面</h2>
+                <font ID="num" SIZE="6">开始倒计数</font>
+            </div>
+        </div>
+        <a href="login.html">没有跳转请点击这里</a>
+    </div>
+    </div>
+    
+
+</body>
+
+</html>
