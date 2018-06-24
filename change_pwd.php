@@ -40,7 +40,7 @@
                       ?>
             </p>
  
-                <button   id="btn-reg" style="width:100px;margin-left:127px;"><a href="admin.php">返回首页</a></button>
+                <button   id="btn-reg" style="width:100px;margin-left:127px;"><a href="admin.php    ">返回首页</a></button>
             </form>
         </div>
     </div>
